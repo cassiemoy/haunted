@@ -127,7 +127,7 @@ function update() {
   }
 
   if ((ghost1.x !== ghost1.lastx) || (ghost1.y !== ghost1.lasty )) {
-    fb.ghost1.set({
+    gd.ghost1.set({
       x : ghost1.position.x,
       y : ghost1.position.y
     });
