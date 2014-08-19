@@ -10,6 +10,7 @@ $(document).ready(function() {
   var roomSession = $("#room-session").val();
   if (typeof roomSession !== "undefined") {
     fb = new firebase.firebaseSetup(roomSession);
+    gd = new firebase.firebaseSetup(roomSession);
   }
 
   // Recieve a message
@@ -137,7 +138,7 @@ function update() {
     person.y = snapshot.val().y
   });
 
-  fb.ghost1.on("value", function(snapshot) {
+  gd.ghost1.on("value", function(snapshot) {
     ghost1.x = snapshot.val().x
     ghost1.y = snapshot.val().y
   });

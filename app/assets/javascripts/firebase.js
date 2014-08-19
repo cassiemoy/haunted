@@ -40,3 +40,25 @@ firebase.sendCoordinates = function(sprite) {
     }
   });
 }
+
+// Trying out a second firebase
+
+var ghostdemo = {}
+
+ghostdemo.firebaseSetup = function(roomSession) {
+  this.ref = new Firebase("https://ghostdemo.firebaseio.com/");
+  this.room = this.ref.child(roomSession);
+  this.ghost1 = this.game.child("ghost1");
+}
+
+ghostdemo.sendCoordinates = function(sprite) {
+  firebase.game.push({
+    message : {
+      sprite: sprite,
+      x_coordinates: sprite.x,
+      y_coordinates: sprite.y,
+      timestamp: Firebase.ServerValue.TIMESTAMP
+    }
+  });
+}
+
