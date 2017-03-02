@@ -1,7 +1,7 @@
 var firebase = {}
 
 firebase.firebaseSetup = function(roomSession) {
-  this.ref = new Firebase("https://haunted.firebaseio.com/");
+  this.ref = new Firebase("https://ghostdemo.firebaseio.com/");
   this.room = this.ref.child(roomSession);
   this.chat = this.room.child("chat");
   this.game = this.room.child("game");
